@@ -1,11 +1,13 @@
 import curses as cr
-from Text import *
 from threading import Thread
+import sys
 
-class tapp:
+
+from widgets.Text import Text
+
+class tapp():
     def __init__(self) -> None:
         self.win = cr.initscr()
-        self.maxY,self.maxX = self.win.getmaxyx()
         self.alive = True
         self.func = True
         self.elements=[]
@@ -21,7 +23,7 @@ class tapp:
         self.elements.append(element)
 
     def __draw(self):
-        while self.alive and self.func:
+        while self.alive:
             self.win.erase()
             for element in self.elements:
                 element.draw()
@@ -49,3 +51,5 @@ class tapp:
         cr.echo()
         cr.curs_set(1)
         cr.endwin()
+    def maxYX(self):
+        return self.win.getmaxyx()

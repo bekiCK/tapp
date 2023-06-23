@@ -1,5 +1,6 @@
+
 class Text:
-    def __init__(self,parent,x,y,text):
+    def __init__(self,text,parent: object,x=0,y=0):
         self.text=text
         self.parent=parent
         self.x = x 
