@@ -12,7 +12,7 @@ class tapp:
         self.events={}
 
         cr.cbreak()
-        #cr.noecho()
+        cr.noecho()
         cr.curs_set(0)
         cr.start_color()
         self.win.refresh()
